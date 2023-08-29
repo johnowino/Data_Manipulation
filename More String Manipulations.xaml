@@ -71,7 +71,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="More_String_Manipulations" sap:VirtualizedContainerService.HintSize="496,1964" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="More_String_Manipulations" sap:VirtualizedContainerService.HintSize="496,3110" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="VarName1">
         <Variable.Default>
@@ -87,85 +87,146 @@
       <Variable x:TypeArguments="x:String" Name="StringJoin" />
       <Variable x:TypeArguments="x:String" Name="ReplacedName" />
       <Variable x:TypeArguments="x:String" Name="SplitVariable" />
+      <Variable x:TypeArguments="x:String" Name="SubStringExtract" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Assign String Concatination" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap2010:Annotation.AnnotationText="Concatenates the string representations of two specified objects.&#xD;&#xA;&#xD;&#xA;Expression: String.Concat (VarName1, VarName2)&#xD;&#xA;&#xD;&#xA;Output datatype: String" DisplayName="Assign String Concatination" sap:VirtualizedContainerService.HintSize="434,169" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[VarName3]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">[string.Concat(VarName1, " ", VarName2)]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[VarName3]" />
-    <Assign DisplayName="Assign Contains" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap2010:Annotation.AnnotationText="Checks whether a specified substring occurs within a string. Returns true or false.&#xD;&#xA;&#xD;&#xA;Expression: VarName.Contains (“text”)&#xD;&#xA;&#xD;&#xA;Output data type: Boolean" DisplayName="Assign Contains" sap:VirtualizedContainerService.HintSize="434,184" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[Contains]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:Boolean">[VarName3.Contains("wardrobe")]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Contains]" />
-    <Assign DisplayName="Assign String Format" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap2010:Annotation.AnnotationText="Converts the value of objects to strings (and inserts them into another text).&#xD;&#xA;&#xD;&#xA;Expression: String.Format(“{0} is {1}”, VarName1, VarName2)&#xD;&#xA;&#xD;&#xA;Output datatype: String" DisplayName="Assign String Format" sap:VirtualizedContainerService.HintSize="434,184" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[StringFormat]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">[String.Format("{0} is converted to {1}", VarName1, VarName2)]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[StringFormat]" />
-    <Assign DisplayName="Assign IndexOf" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap2010:Annotation.AnnotationText="Returns the zero-based index of the first occurrence of a specified Unicode character or string within this instance.&#xD;&#xA;&#xD;&#xA;Expression: VarName1.IndexOf(“a”)&#xD;&#xA;&#xD;&#xA;Output datatype: Int32" DisplayName="Assign IndexOf" sap:VirtualizedContainerService.HintSize="434,184" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[SaveIndexOf]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:Int32">[VarName3.IndexOf("a")]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[VarName3]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[SaveIndexOf]" />
-    <Assign DisplayName="Assign Last IndexOf" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign sap2010:Annotation.AnnotationText="Reports the zero-based index position of the last occurrence of a specified Unicode character or string within this instance.&#xD;&#xA;&#xD;&#xA;Expression: VarName1.LastIndexOf(&quot;author&quot;)&#xD;&#xA;&#xD;&#xA;Output datatype: Int32" DisplayName="Assign Last IndexOf" sap:VirtualizedContainerService.HintSize="434,184" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[SaveLastIndexOf]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:Int32">[VarName3.LastIndexOf("a")]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[SaveLastIndexOf]" />
-    <Assign DisplayName="Assign String Join" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign sap2010:Annotation.AnnotationText="Concatenates the elements in a collection and displays them as String.&#xD;&#xA;&#xD;&#xA;Expression: String.Join(“|”, CollVarName1)&#xD;&#xA;&#xD;&#xA;Output datatype: String" DisplayName="Assign String Join" sap:VirtualizedContainerService.HintSize="434,169" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[StringJoin]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">[String.Join("| ", VarName2,VarName1, VarName3, Contains)]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[StringJoin]" />
-    <Assign DisplayName="Assign Replace Occurence" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign sap2010:Annotation.AnnotationText="Replaces all the occurrences of a substring in a string.&#xD;&#xA;&#xD;&#xA;Expression: VarName.Replace (“original”, “replaced”)&#xD;&#xA;&#xD;&#xA;Output datatype: String" DisplayName="Assign Replace All Occurences in a String" sap:VirtualizedContainerService.HintSize="434,169" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[ReplacedName]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">[VarName3.Replace("John","Stacey")]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[ReplacedName]" />
-    <Assign DisplayName="Assign Split String" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+    <Assign sap2010:Annotation.AnnotationText="Splits a string into substrings using a given separator.&#xD;&#xA;&#xD;&#xA;Expression: VarName.Split(“|“c)(index)&#xD;&#xA;&#xD;&#xA;Output datatype: Array of String" DisplayName="Assign Split String Using Given Separator" sap:VirtualizedContainerService.HintSize="434,169" sap2010:WorkflowViewState.IdRef="Assign_8">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[SplitVariable]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">[VarName1.Split("-"c)(1)]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[SplitVariable]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <Assign sap2010:Annotation.AnnotationText="Extracts a substring from a string using the starting index and the length.&#xD;&#xA;&#xD;&#xA;Expression: VarName1.Substring(startIndex, length)&#xD;&#xA;&#xD;&#xA;Output datatype: String" DisplayName="Assign Sub String" sap:VirtualizedContainerService.HintSize="434,169" sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[SubStringExtract]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[VarName3.Substring(3,4)]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[SubStringExtract]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
