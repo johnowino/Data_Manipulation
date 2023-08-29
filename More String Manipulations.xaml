@@ -71,9 +71,13 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="More_String_Manipulations" sap:VirtualizedContainerService.HintSize="496,1661" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="More_String_Manipulations" sap:VirtualizedContainerService.HintSize="496,1964" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="John Mark" Name="VarName1" />
+      <Variable x:TypeArguments="x:String" Name="VarName1">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">John-Mark</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Default="Edward Owino" Name="VarName2" />
       <Variable x:TypeArguments="x:String" Name="VarName3" />
       <Variable x:TypeArguments="x:Boolean" Name="Contains" />
@@ -82,6 +86,7 @@
       <Variable x:TypeArguments="x:Int32" Name="SaveLastIndexOf" />
       <Variable x:TypeArguments="x:String" Name="StringJoin" />
       <Variable x:TypeArguments="x:String" Name="ReplacedName" />
+      <Variable x:TypeArguments="x:String" Name="SplitVariable" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -143,7 +148,7 @@
       </Assign.Value>
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[StringJoin]" />
-    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign DisplayName="Assign Replace Occurence" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[ReplacedName]</OutArgument>
       </Assign.To>
@@ -151,6 +156,21 @@
         <InArgument x:TypeArguments="x:String">[VarName3.Replace("John","Stacey")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[ReplacedName]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[ReplacedName]" />
+    <Assign DisplayName="Assign Split String" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[SplitVariable]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[VarName1.Split("-"c)(1)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[SplitVariable]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
   </Sequence>
 </Activity>
